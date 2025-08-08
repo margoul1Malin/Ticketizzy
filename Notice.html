@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ticketizzy 1.0.0 - Documentation</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #1a73e8;
+    }
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 1.6em;
+      margin-top: 40px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    h3 {
+      font-size: 1.3em;
+      margin-top: 25px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    .code {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+    .note {
+      background-color: #fff8e1;
+      padding: 10px;
+      border-left: 4px solid #ff9800;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ticketizzy 1.0.0</h1>
+
+  <h2>1. Fonctionnalités Clés</h2>
+  <ul>
+    <li>Extraction des données textuelles avec Gemini (IA de Google).</li>
+    <li>Édition du fichier répertoire des S/N dans l'interface.</li>
+    <li>Génération automatique des étiquettes basées sur le modèle fourni.</li>
+    <li>Compatibilité Windows 10/11.</li>
+  </ul>
+
+  <h2>2. Installation</h2>
+  <p>Le dossier contient 3 fichiers clés : l'Installateur, le Modèle et le Script d'initialisation des dépendances.</p>
+
+  <h3>2.1 Lancer l'installateur</h3>
+  <div class="code">
+    > Double-clic sur "Ticketizy Setup 1.0.0"<br>
+    > Sélectionnez "Installer juste pour moi (username)"<br>
+    > Cliquez sur "Installer"<br>
+    > Cliquez sur "Suivant"
+  </div>
+  <p>Une fois l'installation terminée, cliquez sur "Terminer". Vous pouvez laisser la case de lancement automatique cochée.</p>
+
+  <h3>2.2 Initialisation des dépendances</h3>
+  <p>Avant d'utiliser le programme, retournez dans le dossier fourni et double-cliquez sur le fichier <strong>"Dependencies"</strong>. Un terminal apparaîtra. Si tout se passe bien, vous verrez le message :</p>
+  <div class="code">Fait. Appuyez sur une touche pour continuer…</div>
+  <p>Appuyez sur une touche pour fermer le terminal. Le programme est maintenant prêt à être utilisé.</p>
+
+  <h2>3. Utilisation</h2>
+  <p>L'interface est organisée en une barre latérale avec trois fenêtres principales :</p>
+
+  <h3>3.1 Import & OCR</h3>
+  <p>Importez les images, puis extrayez les données.</p>
+  <h4>3.1.1 Configuration de la clé API</h4>
+  <ul>
+    <li>Remplissez le champ <strong>"Clé API Gemini"</strong> avec la clé générée par Google.</li>
+    <li>Consultez la section 4 de ce document pour savoir comment obtenir cette clé.</li>
+    <li>Cliquez sur <strong>"Sauvegarder"</strong>.</li>
+  </ul>
+  <h4>3.1.2 Sélection des fichiers à traiter</h4>
+  <ul>
+    <li>Formats acceptés : <code>.jpg</code>, <code>.jpeg</code>, <code>.png</code>.</li>
+    <li>Importez jusqu’à 10 images à la fois pour de meilleures performances.</li>
+    <li>Les résultats extraits apparaîtront, vous pouvez les corriger si besoin.</li>
+    <li>Cliquez ensuite sur <strong>"Importer dans JSON"</strong> pour organiser les numéros de série (S/N).</li>
+  </ul>
+  <div class="note">
+    💡 Astuce : En cas de problème avec les caractères extraits des images (par exemple, "0" à la place de "O"), vous pouvez corriger manuellement chaque élément du résultat obtenu avant de cliquer sur "Importer dans JSON."
+  </div>
+
+
+  <h3>3.2 Édition JSON</h3>
+  <p>Modifiez le contenu du fichier directement depuis l’interface.</p>
+  <ul>
+    <li><strong>Ajouter Étiquette :</strong> Ajoutez une étiquette d’envoi.</li>
+    <li><strong>+ Modèle / Supprimer :</strong> Gérez les références de produits (ex : OLED623451G).</li>
+    <li><strong>+ Groupe / Supprimer :</strong> Ajoutez un groupe avec son motif.</li>
+    <li><strong>+ S/N / Icône Poubelle :</strong> Gérez les numéros S/N dans les colonnes.</li>
+  </ul>
+
+  <h3>3.3 Génération d’Étiquettes</h3>
+  <ul>
+    <li><strong>Générer toutes les étiquettes :</strong> Pour tous les éléments du fichier.</li>
+    <li><strong>Générer pour une étiquette spécifique.</strong></li>
+    <li><strong>Générer pour un modèle spécifique.</strong></li>
+    <li><strong>Générer pour un groupe spécifique.</strong></li>
+  </ul>
+  <p><strong>Accès aux étiquettes générées :</strong></p>
+  <ul>
+    <li><strong>Méthode simple :</strong> Double-clic sur le raccourci <code>OuvrirDossierEtiquettes</code>.</li>
+    <li><strong>Méthode longue :</strong> Naviguez vers le dossier suivant :<br>
+      <code>C:\Users\VotreNomIci\AppData\Roaming\Ticketizy\output</code>
+    </li>
+  </ul>
+  <h2>4. Obtenir votre Clé API Google (Google Cloud Console)</h2>
+  <p>Pour utiliser Gemini, vous devez obtenir une clé API. Les étapes ci-dessous vous guident à travers le processus de création d'un compte Google Cloud, la création d'un projet, et l'activation de l'API Gemini pour générer votre clé.</p>
+
+  <h3>4.1 Créer un compte Google Cloud</h3>
+  <ol>
+    <li>Rendez-vous sur la <a href="https://cloud.google.com/">page d'accueil de Google Cloud</a> et cliquez sur **"Commencer gratuitement"** ou **"Console"**.</li>
+    <li>Connectez-vous avec votre compte Google ou créez-en un si vous n'en avez pas.</li>
+    <li>Suivez les instructions pour configurer votre compte, ce qui inclut l'acceptation des conditions de service et la configuration des informations de facturation. *Note : Google offre souvent un crédit gratuit pour commencer, et vous ne serez pas facturé tant que vous n'aurez pas dépassé cette limite.*</li>
+  </ol>
+
+  <h3>4.2 Créer un projet</h3>
+  <ol>
+    <li>Une fois dans la console Google Cloud, dans le sélecteur de projet en haut de la page, cliquez sur **"Nouveau projet"**.</li>
+    <li>Donnez un nom à votre projet (ex: "Ticketizzy-Project") et, si nécessaire, sélectionnez un emplacement d'organisation.</li>
+    <li>Cliquez sur **"Créer"**.</li>
+  </ol>
+
+  <h3>4.3 Activer l'API Gemini</h3>
+  <ol>
+    <li>Assurez-vous que votre nouveau projet est bien sélectionné dans le sélecteur de projet.</li>
+    <li>Dans le menu de navigation à gauche, allez dans **"API et services"** > **"Bibliothèque"**.</li>
+    <li>Dans la barre de recherche, tapez **"Gemini API"** ou **"Generative Language API"**.</li>
+    <li>Cliquez sur l'API correspondante dans les résultats de recherche.</li>
+    <li>Sur la page de l'API, cliquez sur **"Activer"**.</li>
+  </ol>
+
+  <h3>4.4 Créer votre clé API</h3>
+  <ol>
+    <li>Toujours dans le menu **"API et services"**, allez dans **"Identifiants"**.</li>
+    <li>Cliquez sur **"Créer des identifiants"** en haut de la page, puis sélectionnez **"Clé API"**.</li>
+    <li>Une nouvelle clé API sera générée et affichée à l'écran. <strong>Copiez cette clé immédiatement</strong>, car vous ne pourrez plus la récupérer par la suite.</li>
+    <li>Vous pouvez éditer la clé pour ajouter des restrictions (par exemple, pour limiter son utilisation à votre application), ce qui est recommandé pour des raisons de sécurité.</li>
+  </ol>
+
+  <p>Votre clé est maintenant prête à être insérée dans le champ **"Clé API Gemini"** de l'interface de Ticketizzy, comme décrit dans la section 3.1.1.</p>
+</body>
+</html>
